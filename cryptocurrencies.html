@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptocurrencies | cryPIto</title>
+  <meta name="description" content="Explore the top cryptocurrencies and market data with cryPIto.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo">
+        <img src="./assets/logo.png" alt="CryPIto Logo">
+        <div class="logo-text">cryPIto</div>
+      </div>
+      
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cryptocurrencies.html" class="active">Cryptocurrencies</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="benefits.html">Benefits</a></li>
+        <li><a href="register.html" class="btn btn-primary">Sign Up</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="section" style="background: var(--gradient-blue); padding: 4rem 0;">
+    <div class="container">
+      <h1 class="fade-in">Cryptocurrencies</h1>
+      <p class="fade-in">Explore the most popular cryptocurrencies and stay updated with real-time market data.</p>
+    </div>
+  </section>
+
+  <!-- Top Hot Coins Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-subtitle">Market Leaders</div>
+      <h2 class="section-title">Top Hot Coins</h2>
+      
+      <div class="coin-cards">
+        <!-- Coin cards will be populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- All Cryptocurrencies Section -->
+  <section class="section" style="background: var(--secondary-dark);">
+    <div class="container">
+      <div class="section-subtitle">Market Overview</div>
+      <h2 class="section-title">All Cryptocurrencies</h2>
+      
+      <div class="market-table-container">
+        <table class="market-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>24h %</th>
+              <th>Market Cap</th>
+              <th>Volume (24h)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Market table rows will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Insights Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-subtitle">Analysis</div>
+      <h2 class="section-title">Market Insights</h2>
+      
+      <div class="intro-crypto">
+        <div class="intro-content fade-in">
+          <h3>Understanding Market Trends</h3>
+          <p>The cryptocurrency market is known for its volatility and rapid price movements. Various factors influence these fluctuations, including regulatory news, technological advancements, market sentiment, and macroeconomic trends.</p>
+          <p>By staying informed about market developments and understanding the fundamentals of different projects, investors can make more educated decisions about their crypto portfolios.</p>
+        </div>
+        <div class="intro-image fade-in">
+          <img src="./assets/market-trends.jpg" alt="Crypto Market Trends">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: var(--gradient-blue);">
+    <div class="container text-center">
+      <h2 class="fade-in">Start Trading Today</h2>
+      <p class="fade-in">Join cryPIto to access all cryptocurrencies with competitive rates and advanced trading tools.</p>
+      <a href="register.html" class="btn btn-primary fade-in" style="margin-top: 2rem;">Create Account</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="./assets/logo.png" alt="CryPIto Logo">
+            <div class="footer-logo-text">cryPIto</div>
+          </div>
+          <p>An innovative cryptocurrency platform designed to empower users with seamless access to digital assets.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links-column">
+          <h4 class="footer-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="#">Exchange</a></li>
+            <li><a href="#">Wallet</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Institutional Services</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-column">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="#">Market Data</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links-column">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 cryPIto. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/script.js"></script>
+</body>
+</html>
