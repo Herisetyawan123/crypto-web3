@@ -1,7 +1,3 @@
-
-// Main JavaScript for CryPIto
-
-// DOM elements
 const header = document.querySelector('.header');
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -31,14 +27,15 @@ window.addEventListener('scroll', () => {
 if (menuToggle) {
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', 
+    menuToggle.setAttribute(
+      'aria-expanded',
       navLinks.classList.contains('active') ? 'true' : 'false'
     );
   });
 }
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
+document.querySelectorAll('.nav-links a').forEach((link) => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('active');
     menuToggle.setAttribute('aria-expanded', 'false');
@@ -47,16 +44,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 // FAQ accordion functionality
 if (faqItems.length > 0) {
-  faqItems.forEach(item => {
+  faqItems.forEach((item) => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
       // Close other items
-      faqItems.forEach(otherItem => {
+      faqItems.forEach((otherItem) => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
         }
       });
-      
+
       // Toggle current item
       item.classList.toggle('active');
     });
@@ -65,10 +62,10 @@ if (faqItems.length > 0) {
 
 // Scroll animations
 function animateOnScroll() {
-  elements.forEach(element => {
+  elements.forEach((element) => {
     const elementPosition = element.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
-    
+
     if (elementPosition < windowHeight - 100) {
       element.classList.add('visible');
     }
@@ -85,14 +82,12 @@ function initAnimations() {
 
 // Fetch and display crypto coin data
 async function loadCoinData() {
-  // Get tables and coin card containers if they exist
   const coinCardsContainer = document.querySelector('.coin-cards');
   const marketTable = document.querySelector('.market-table tbody');
-  
+
   if (!coinCardsContainer && !marketTable) return;
-  
+
   try {
-    // Sample crypto data (in a real app, this would be fetched from an API)
     const coins = [
       {
         id: 'bitcoin',
@@ -102,67 +97,73 @@ async function loadCoinData() {
         current_price: 49830.52,
         price_change_percentage_24h: 2.1,
         market_cap: 973494595832,
-        volume: 31693246144
+        volume: 31693246144,
       },
       {
         id: 'ethereum',
         name: 'Ethereum',
         symbol: 'ETH',
-        image: 'https://assets.coingecko.com/coins/images/279/large/ethereum.png',
+        image:
+          'https://assets.coingecko.com/coins/images/279/large/ethereum.png',
         current_price: 2365.33,
         price_change_percentage_24h: 1.8,
         market_cap: 284684684149,
-        volume: 15784215339
+        volume: 15784215339,
       },
       {
         id: 'binancecoin',
         name: 'Binance Coin',
         symbol: 'BNB',
-        image: 'https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png',
+        image:
+          'https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png',
         current_price: 607.25,
         price_change_percentage_24h: -0.4,
         market_cap: 93408807891,
-        volume: 2314568923
+        volume: 2314568923,
       },
       {
         id: 'solana',
         name: 'Solana',
         symbol: 'SOL',
-        image: 'https://assets.coingecko.com/coins/images/4128/large/solana.png',
-        current_price: 142.10,
+        image:
+          'https://assets.coingecko.com/coins/images/4128/large/solana.png',
+        current_price: 142.1,
         price_change_percentage_24h: 3.6,
         market_cap: 60785943218,
-        volume: 2145784521
+        volume: 2145784521,
       },
       {
         id: 'cardano',
         name: 'Cardano',
         symbol: 'ADA',
-        image: 'https://assets.coingecko.com/coins/images/975/large/cardano.png',
+        image:
+          'https://assets.coingecko.com/coins/images/975/large/cardano.png',
         current_price: 0.513,
         price_change_percentage_24h: -1.2,
         market_cap: 18023615742,
-        volume: 741236854
+        volume: 741236854,
       },
       {
         id: 'ripple',
         name: 'XRP',
         symbol: 'XRP',
-        image: 'https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png',
+        image:
+          'https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png',
         current_price: 0.5625,
         price_change_percentage_24h: 0.8,
         market_cap: 30587412587,
-        volume: 1258741236
+        volume: 1258741236,
       },
       {
         id: 'polkadot',
         name: 'Polkadot',
         symbol: 'DOT',
-        image: 'https://assets.coingecko.com/coins/images/12171/large/polkadot.png',
+        image:
+          'https://assets.coingecko.com/coins/images/12171/large/polkadot.png',
         current_price: 6.82,
         price_change_percentage_24h: 4.1,
         market_cap: 9841236852,
-        volume: 485612384
+        volume: 485612384,
       },
       {
         id: 'dogecoin',
@@ -172,21 +173,19 @@ async function loadCoinData() {
         current_price: 0.1363,
         price_change_percentage_24h: 5.3,
         market_cap: 18745213658,
-        volume: 1854796321
-      }
+        volume: 1854796321,
+      },
     ];
 
     // Add coin cards to homepage or cryptocurrencies page
     if (coinCardsContainer) {
-      // Only show top 4 coins for cards
       const topCoins = coins.slice(0, 4);
-      topCoins.forEach(coin => {
+      topCoins.forEach((coin) => {
         const card = createCoinCard(coin);
         coinCardsContainer.appendChild(card);
       });
     }
 
-    // Add all coins to market table on cryptocurrencies page
     if (marketTable) {
       coins.forEach((coin, index) => {
         const row = createCoinTableRow(coin, index + 1);
@@ -201,12 +200,12 @@ async function loadCoinData() {
 // Create coin card element
 function createCoinCard(coin) {
   const card = document.createElement('div');
-  card.className = 'coin-card fade-in';
-  
+  card.className = 'coin-card';
+
   const isPositive = coin.price_change_percentage_24h >= 0;
   const changeClass = isPositive ? 'positive' : 'negative';
   const changeIcon = isPositive ? '↑' : '↓';
-  
+
   card.innerHTML = `
     <div class="coin-header">
       <img src="${coin.image}" alt="${coin.name}" class="coin-icon">
@@ -220,18 +219,18 @@ function createCoinCard(coin) {
       ${changeIcon} ${Math.abs(coin.price_change_percentage_24h).toFixed(2)}%
     </div>
   `;
-  
+
   return card;
 }
 
 // Create table row for coin
 function createCoinTableRow(coin, rank) {
   const row = document.createElement('tr');
-  
+
   const isPositive = coin.price_change_percentage_24h >= 0;
   const changeClass = isPositive ? 'text-success' : 'text-error';
   const changeIcon = isPositive ? '↑' : '↓';
-  
+
   row.innerHTML = `
     <td>${rank}</td>
     <td>
@@ -244,10 +243,12 @@ function createCoinTableRow(coin, rank) {
       </div>
     </td>
     <td>$${coin.current_price.toLocaleString()}</td>
-    <td class="${changeClass}">${changeIcon} ${Math.abs(coin.price_change_percentage_24h).toFixed(2)}%</td>
+    <td class="${changeClass}">${changeIcon} ${Math.abs(
+    coin.price_change_percentage_24h
+  ).toFixed(2)}%</td>
     <td>$${(coin.market_cap / 1000000000).toFixed(2)}B</td>
     <td>$${(coin.volume / 1000000000).toFixed(2)}B</td>
   `;
-  
+
   return row;
 }
